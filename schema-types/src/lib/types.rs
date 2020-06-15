@@ -37,8 +37,8 @@ pub type Connectivity = Jsconnectivity;
 // implementation of https://vorto.eclipse.org/#/details/com.bosch.drx:Vehicle:1.0.3
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Vehicle {
-    can_engine_rpm : CANEngineRPM,
-    can_gear : CANGear,
-    raw_can_data : RawCANData,
-    connectivity : Connectivity,
+    pub can_engine_rpm : CANEngineRPM,
+    pub can_gear : CANGear,
+    pub raw_can_data : RawCANData,
+    pub connectivity : Connectivity,
 }
