@@ -1,0 +1,14 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Properties of <com.bosch.drx:CANgear:1.0.1>",
+	"type": "object",
+	"properties": {
+		"value": {
+			"type": "string"
+		},
+		"error": {
+			"type": "boolean"
+		}
+	},
+	"required": ["value"]
+}

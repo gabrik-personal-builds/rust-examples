@@ -1,0 +1,11 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Properties of <com.bosch.drx:RawCANdata:1.0.0>",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "string"
+		}
+	},
+	"required": ["data"]
+}

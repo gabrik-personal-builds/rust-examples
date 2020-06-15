@@ -1,0 +1,21 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Properties of <org.eclipse.vorto:Connectivity:1.0.0>",
+	"type": "object",
+	"properties": {
+		"rssi": {
+			"type": "integer"
+		},
+		"snr": {
+			"type": "integer"
+		},
+		"lastSeen": {
+			"type": "number"
+		},
+		"status": {
+			"type": "string",
+			"enum": [ "Connected","Connecting","Disconnected" ]
+		}
+	},
+	"required": ["lastSeen"]
+}
