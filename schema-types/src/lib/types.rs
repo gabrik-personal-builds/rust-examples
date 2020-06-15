@@ -27,12 +27,18 @@ schemafy::schemafy!(
     "vehicle/org.eclipse.vorto_Connectivity_1_0_0.schema.json"
 );
 
+schemafy::schemafy!(
+    root : Jsinfrafdu
+    "fos/infra_fdu.json"
+);
+
 
 pub type CANEngineRPM = Jsenginerpm;
 pub type CANGear = Jscangear;
 pub type RawCANData = Jsrawcandata;
 pub type Connectivity = Jsconnectivity;
 
+pub type InfraFDU = Jsinfrafdu;
 
 // implementation of https://vorto.eclipse.org/#/details/com.bosch.drx:Vehicle:1.0.3
 #[derive(Serialize, Deserialize, Debug)]
