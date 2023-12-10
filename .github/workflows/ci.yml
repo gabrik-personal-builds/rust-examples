@@ -18,17 +18,27 @@ jobs:
       - name: Install depdendencies
         run: |
           sudo apt update
-          sudo apt install -y protobuf-compiler
+          sudo apt install -y curl build-essential
       - name: Install Rust toolchain
         run: |
+            curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh -s --  -y
+            source "$HOME/.cargo/env"
             rustup show
             rustup component add rustfmt clippy
       - name: Code format check
-        run: cargo fmt -- --check
+        run: |
+          source "$HOME/.cargo/env"
+          cargo fmt -- --check
       - name: Unit tests
-        run: cargo test --all
+        run: |
+          source "$HOME/.cargo/env"
+          cargo test --all
       - name: Clippy
-        run: cargo clippy --all-targets -- -D warnings
+        run: |
+          source "$HOME/.cargo/env"
+          cargo clippy --all-targets -- -D warnings
       - name: Clean up
         if: always()
-        run: cargo clean
+        run: | 
+          source "$HOME/.cargo/env"
+          cargo clean
