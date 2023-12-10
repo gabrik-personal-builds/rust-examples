@@ -1,0 +1,19 @@
+
+[workspace]
+members = [
+  "schema-types",
+]
+resolver = "2"
+
+
+[profile.dev]
+debug=true
+opt-level = 0
+
+
+[profile.release]
+debug=false
+lto="fat"
+codegen-units=1
+opt-level=3
+panic="abort"

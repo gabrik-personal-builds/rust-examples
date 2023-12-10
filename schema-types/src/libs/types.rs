@@ -1,11 +1,8 @@
-
-
 extern crate serde;
 extern crate serde_json;
 extern crate serde_yaml;
 
-use serde::{Serialize, Deserialize};
-
+use serde::{Deserialize, Serialize};
 
 schemafy::schemafy!(
     root : Jsenginerpm
@@ -32,7 +29,6 @@ schemafy::schemafy!(
     "fos/infra_fdu.json"
 );
 
-
 pub type CANEngineRPM = Jsenginerpm;
 pub type CANGear = Jscangear;
 pub type RawCANData = Jsrawcandata;
@@ -43,8 +39,8 @@ pub type InfraFDU = Jsinfrafdu;
 // implementation of https://vorto.eclipse.org/#/details/com.bosch.drx:Vehicle:1.0.3
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Vehicle {
-    pub can_engine_rpm : CANEngineRPM,
-    pub can_gear : CANGear,
-    pub raw_can_data : RawCANData,
-    pub connectivity : Connectivity,
+    pub can_engine_rpm: CANEngineRPM,
+    pub can_gear: CANGear,
+    pub raw_can_data: RawCANData,
+    pub connectivity: Connectivity,
 }
